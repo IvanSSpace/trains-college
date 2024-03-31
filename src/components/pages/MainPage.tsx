@@ -14,7 +14,9 @@ const MainPage = () => {
         </ul>
       </nav>
       <hr />
-      <Outlet />
+      <div className="bg-blue-700 size-full flex flex-col min-h-screen items-center">
+        <Outlet />
+      </div>
     </>
   )
 };
