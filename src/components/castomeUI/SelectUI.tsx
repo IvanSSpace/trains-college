@@ -14,10 +14,11 @@ import React from "react";
 
 type PropTypes = {
   title: string,
+  titleType: string,
   type: 'cities' | 'peopleCount';
 }
 
-const SelectCastome: React.FC<PropTypes> = ({ title, type }) => {
+const SelectCastome: React.FC<PropTypes> = ({ title, titleType, type }) => {
   return (
     <Select>
       <SelectTrigger className="w-[180px]">
@@ -25,7 +26,7 @@ const SelectCastome: React.FC<PropTypes> = ({ title, type }) => {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Города</SelectLabel>
+          <SelectLabel>{titleType}</SelectLabel>
           {type === 'cities' && data.cities.map((item: City) => ( // Используем явное указание типа
             <SelectItem key={item.name} value={item.name}>{item.name}</SelectItem>
           ))}

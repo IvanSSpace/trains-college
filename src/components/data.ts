@@ -23,10 +23,10 @@ const cities: {name: string}[] = [
 ];
 
 const peopleCount: {count: string}[] = [
-    { count: '1' },
-    { count: '2' },
-    { count: '3' },
-    { count: '4' },
+    { count: '1 билет' },
+    { count: '2 билета' },
+    { count: '3 билета' },
+    { count: '4 билета' },
 ]
 
 // type Data = {

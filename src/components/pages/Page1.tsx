@@ -4,14 +4,6 @@ import { useState } from "react"
 import { Button } from "../ui/button"
 import arrayReverse from '../../assets/arrayReverse.svg'
 import SelectCastome from "../castomeUI/SelectUI"
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 
 type Inputs = {
   example: string
@@ -41,11 +33,11 @@ const Page1 = () => {
 
       <form className="flex flex-col items-center w-[800px]" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-row justify-center">
-          <SelectCastome title="Откуда" type="cities" />
+          <SelectCastome title="Откуда" titleType="Города" type="cities" />
 
           <Button><img src={arrayReverse} alt="arrayReverse" /></Button>
 
-          <SelectCastome title="Куда" type="cities" />
+          <SelectCastome title="Куда" titleType="Города" type="cities" />
         </div>
         <p>Когда</p>
         <div className="bg-[#ffffff]">
@@ -57,7 +49,7 @@ const Page1 = () => {
           />
         </div>
 
-        <SelectCastome title="Билеты" type="peopleCount" />
+        <SelectCastome title="Билеты" titleType="Количество билетов" type="peopleCount" />
 
         {errors.exampleRequired && <span>This field is required</span>}
         <Button type="submit">купить билет</Button>
