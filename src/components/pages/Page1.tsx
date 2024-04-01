@@ -3,13 +3,12 @@ import { Calendar } from "../ui/calendar"
 import { useState } from "react"
 import { Button } from "../ui/button"
 import arrayReverse from '../../assets/arrayReverse.svg'
-// import data from '../data'
+import SelectCastome from "../castomeUI/SelectUI"
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
@@ -20,11 +19,13 @@ type Inputs = {
 }
 
 
+// type headerSelect: string;
+
 const Page1 = () => {
   const [ date, setDate ] = useState<Date | undefined>(new Date())
 
   const {
-    register,
+    // register,
     handleSubmit,
     watch,
     formState: { errors },
@@ -40,10 +41,11 @@ const Page1 = () => {
 
       <form className="flex flex-col items-center w-[800px]" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-row justify-center">
-          <input placeholder="Откуда" className="m-4 p-3 rounded-lg"  {...register("example")} />
+          <SelectCastome title="Откуда" type="cities" />
+
           <Button><img src={arrayReverse} alt="arrayReverse" /></Button>
 
-          <input placeholder="Куда" className="m-4 p-3 rounded-lg" {...register("exampleRequired", { required: true })} />
+          <SelectCastome title="Куда" type="cities" />
         </div>
         <p>Когда</p>
         <div className="bg-[#ffffff]">
@@ -55,18 +57,7 @@ const Page1 = () => {
           />
         </div>
 
-        <Select>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Select a fruit" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectLabel>0 взрослых</SelectLabel>
-              { }
-              <SelectItem value="moscow">Москва</SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+        <SelectCastome title="Билеты" type="peopleCount" />
 
         {errors.exampleRequired && <span>This field is required</span>}
         <Button type="submit">купить билет</Button>
