@@ -8,7 +8,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-import { data, City, PeopleCount } from "../data"
+import { data, City, PeopleCount } from "../func/data"
 import React from "react";
 
 

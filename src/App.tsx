@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import MainPage from './components/pages/MainPage'
-import Page1 from './components/pages/Page1'
-import Page2 from './components/pages/Page2'
+import MainPage from './pages/MainPage'
+import Page1 from './pages/page1/Page1'
+import Page2 from './pages/page2/Page2'
 
 
 function App() {

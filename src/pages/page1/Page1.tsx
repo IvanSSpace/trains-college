@@ -1,4 +1,4 @@
-import Page1Form from "./Page1form";
+import Page1Form from "./Page1Form";
 
 const Page1 = () => {
 
